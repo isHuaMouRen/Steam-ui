@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SteamUI.Windows"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
         mc:Ignorable="d"
-        Title="WindowUpdate" Height="450" Width="800">
+        Title="Steam" Height="122" Width="386" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="/Assets/Icon/Steam.ico">
     <Grid>
-        
+        <TextBlock Text="正在更新 Steam..." VerticalAlignment="Top" Margin="10,10,10,0"/>
+        <ui:ProgressBar Margin="10,0,10,0" IsIndeterminate="True" Background="#33000000"/>
+        <TextBlock Text="正在检查可用更新..." VerticalAlignment="Bottom" Margin="10,0,100,20"/>
+        <Button Content="取消" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Width="80" Click="Button_Click"/>
     </Grid>
 </Window>

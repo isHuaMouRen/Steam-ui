@@ -8,23 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SteamUI.Windows
+namespace SteamUI.Controls.Icons
 {
     /// <summary>
-    /// WindowUpdate.xaml 的交互逻辑
+    /// IconSteam.xaml 的交互逻辑
     /// </summary>
-    public partial class WindowUpdate : Window
+    public partial class IconSteam : UserControl
     {
-        public bool isFinished { get; set; } = false;
-
-        public WindowUpdate()
+        public IconSteam()
         {
             InitializeComponent();
-            Closed += ((s, e) => Application.Current.Shutdown(0));
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown(0);
     }
 }
