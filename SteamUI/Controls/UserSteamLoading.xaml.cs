@@ -27,15 +27,15 @@ namespace SteamUI.Controls
             {
                 var animation1 = new DoubleAnimation
                 {
-                    From = 0.8,
-                    To = 0.7,
+                    From = 1,
+                    To = 0.9,
                     Duration = TimeSpan.FromSeconds(2),
                     EasingFunction = new PowerEase { Power = 5, EasingMode = EasingMode.EaseInOut }
                 };
                 var animation2 = new DoubleAnimation
                 {
-                    From = 0.7,
-                    To = 0.8,
+                    From = 0.9,
+                    To = 1,
                     Duration = TimeSpan.FromSeconds(2),
                     EasingFunction = new PowerEase { Power = 5, EasingMode = EasingMode.EaseInOut }
                 };
