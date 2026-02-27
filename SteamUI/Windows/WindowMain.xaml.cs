@@ -17,9 +17,12 @@ namespace SteamUI.Windows
     /// </summary>
     public partial class WindowMain : Window
     {
+        public bool isCanExit = true;
+
         public WindowMain()
         {
             InitializeComponent();
+            Closed += ((s, e) => { if (isCanExit) Application.Current.Shutdown(0); });
         }
     }
 }

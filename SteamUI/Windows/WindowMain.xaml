@@ -4,9 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SteamUI.Windows"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         mc:Ignorable="d"
-        Title="WindowMain" Height="450" Width="800">
+        Title="Steam" Height="450" Width="800" ui:WindowHelper.UseModernWindowStyle="True">
     <Grid>
-        
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="商店">
+                <MenuItem Header="精选"/>
+                <MenuItem Header="探索队列"/>
+                <MenuItem Header="愿望单"/>
+                <MenuItem Header="点数商店"/>
+                <MenuItem Header="新闻"/>
+                <MenuItem Header="排行榜"/>
+            </MenuItem>
+            <MenuItem Header="库">
+                <MenuItem Header="主页"/>
+                <MenuItem Header="收藏"/>
+                <Separator/>
+                <MenuItem Header="下载"/>
+            </MenuItem>
+            <MenuItem Header="社区">
+                <MenuItem Header="主页"/>
+                <MenuItem Header="讨论区"/>
+                <MenuItem Header="创意工坊"/>
+                <MenuItem Header="市场"/>
+                <MenuItem Header="直播"/>
+            </MenuItem>
+            <MenuItem Header="USERNAME">
+                <MenuItem Header="动态"/>
+                <MenuItem Header="个人资料"/>
+                <MenuItem Header="好友"/>
+                <MenuItem Header="群组"/>
+                <MenuItem Header="内容"/>
+                <MenuItem Header="徽章"/>
+                <MenuItem Header="库存"/>
+                <MenuItem Header="Steam 回顾"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
