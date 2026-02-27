@@ -1,0 +1,66 @@
+﻿<Window x:Class="SteamUI.Windows.WindowLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SteamUI.Windows"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:icons="clr-namespace:SteamUI.Controls.Icons"
+        xmlns:ctrl="clr-namespace:SteamUI.Controls"
+        mc:Ignorable="d"
+         Height="440" Width="705" ResizeMode="NoResize" ui:WindowHelper.UseModernWindowStyle="True" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid x:Name="grid_Background">
+            <Image x:Name="image_Background" Source="/Assets/Image/LoginBackground.jpg" Stretch="UniformToFill">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform x:Name="trans" Y="-50" X="-350"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
+        <Grid x:Name="grid_Login">
+            <!--title-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,0,0,0">
+                <icons:IconSteamNormal Width="70" Height="70" IconColor="White" Opacity="80"/>
+                <TextBlock Text="STEAM - UI" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold" FontSize="30" Opacity="0.8"/>
+            </StackPanel>
+
+            <!--password login-->
+            <StackPanel VerticalAlignment="Top" Margin="50,80,300,0">
+                <TextBlock Text="使用账户名称登录" Foreground="#FF1996FF" Margin="0,0,0,5"/>
+                <TextBox Margin="0,0,0,10"/>
+                <TextBlock Text="密码" Margin="0,0,0,5"/>
+                <PasswordBox/>
+                <CheckBox Content="记住我"/>
+                <Button Content="登录" Style="{DynamicResource AccentButtonStyle}" MinWidth="250" MinHeight="40" HorizontalAlignment="Center" Margin="0,10,0,0" Click="Button_Click"/>
+            </StackPanel>
+
+            <!--qrcode login-->
+            <StackPanel VerticalAlignment="Top" Margin="0,80,50,0" HorizontalAlignment="Right">
+                <TextBlock Text="或使用二维码登录" Foreground="#FF1996FF" Margin="0,0,0,5"/>
+                <Image Source="/Assets/Image/LoginQRCode.png" Width="200" Height="200"/>
+                <TextBlock Margin="0,5,0,0" FontSize="10" HorizontalAlignment="Right">
+                通过二维码使用 <Hyperlink NavigateUri="https://store.steampowered.com/mobile" RequestNavigate="Hyperlink_RequestNavigate">Steam 手机应用</Hyperlink>登录
+                </TextBlock>
+            </StackPanel>
+
+            <!--help-->
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,30" FontSize="10">
+            <Hyperlink NavigateUri="https://help.steampowered.com/zh-cn/wizard/HelpWithLogin" RequestNavigate="Hyperlink_RequestNavigate">请求帮助，我无法登录。</Hyperlink>
+            </TextBlock>
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,50,30" FontSize="10">
+            还没有Steam账户？  <Hyperlink NavigateUri="https://store.steampowered.com/join" RequestNavigate="Hyperlink_RequestNavigate">创建免费账户</Hyperlink>
+            </TextBlock>
+        </Grid>
+
+        <Grid Visibility="Hidden" x:Name="grid_Loading">
+            <ctrl:UserSteamLoading VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="100" Margin="0,0,0,150"/>
+            <TextBlock Text="登录中..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Opacity="0.8"/>
+        </Grid>
+    </Grid>
+</Window>

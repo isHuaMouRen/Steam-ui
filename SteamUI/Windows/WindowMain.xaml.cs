@@ -13,18 +13,13 @@ using System.Windows.Shapes;
 namespace SteamUI.Windows
 {
     /// <summary>
-    /// WindowUpdate.xaml 的交互逻辑
+    /// WindowMain.xaml 的交互逻辑
     /// </summary>
-    public partial class WindowUpdate : Window
+    public partial class WindowMain : Window
     {
-        public bool isCanExit = true;
-
-        public WindowUpdate()
+        public WindowMain()
         {
             InitializeComponent();
-            Closed += ((s, e) => { if (isCanExit) Application.Current.Shutdown(0); });
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown(0);
     }
 }

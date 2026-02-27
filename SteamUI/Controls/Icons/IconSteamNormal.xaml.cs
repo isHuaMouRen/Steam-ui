@@ -8,23 +8,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SteamUI.Windows
+namespace SteamUI.Controls.Icons
 {
     /// <summary>
-    /// WindowUpdate.xaml 的交互逻辑
+    /// IconSteamNormal.xaml 的交互逻辑
     /// </summary>
-    public partial class WindowUpdate : Window
+    public partial class IconSteamNormal : UserControl
     {
-        public bool isCanExit = true;
+        public Color IconColor { get; set; } = Colors.Black;
 
-        public WindowUpdate()
+        public IconSteamNormal()
         {
             InitializeComponent();
-            Closed += ((s, e) => { if (isCanExit) Application.Current.Shutdown(0); });
+            Loaded += ((s, e) =>
+            {
+                path.Fill = new SolidColorBrush(IconColor);
+            });
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e) => Application.Current.Shutdown(0);
     }
 }
